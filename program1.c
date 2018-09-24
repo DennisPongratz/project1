@@ -1,4 +1,4 @@
-/* Ryan and Dennis Pongratz
+/* Ryan Cummings and Dennis Pongratz
  * project1, CSCI112
  * 21/09/2018
  *
