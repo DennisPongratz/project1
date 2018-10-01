@@ -9,10 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0665e5d4-5016-4977-adb3-4f185992b09e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/program1" beforeDir="false" afterPath="$PROJECT_DIR$/program1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program1.c" beforeDir="false" afterPath="$PROJECT_DIR$/program1.c" afterDir="false" />
-    </list>
+    <list default="true" id="0665e5d4-5016-4977-adb3-4f185992b09e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +56,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/program1.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
+            <state relative-caret-position="390">
               <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
             </state>
           </provider>
@@ -146,12 +143,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538401352494</updated>
-      <workItem from="1538401354174" duration="2291000" />
+      <workItem from="1538401354174" duration="2518000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2291000" />
+    <option name="totallyTimeSpent" value="2518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -163,6 +160,7 @@
       <window_info anchor="bottom" id="CMake" visible="true" weight="0.31428573" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -190,7 +188,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/program1.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
+        <state relative-caret-position="390">
           <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
         </state>
       </provider>
