@@ -14,25 +14,23 @@ void getData(double *principal, double *annual_interest, double *nop);
 double calculate_payment(double, double, double);
 
 int main(int argc, char** argv) {
-    double payment;
+    
     // declare variables 
-
-    double principal, annual_interest, nop;
+    double principal, annual_interest, nop, payment;
 
     // get data
-
     getData(&principal, &annual_interest, &nop); 
 
     // do the calculation
     payment = calculate_payment(principal, annual_interest, nop);
     printf("%lf\n", payment);
     
-
     // give the data back
    
     return(0);
 }
 
+// get Data function
 void getData(double *principal, double *annual_interest, double *nop) {
     
     printf("please type in the initial principal: ");
@@ -45,6 +43,7 @@ void getData(double *principal, double *annual_interest, double *nop) {
     scanf("%lf", nop);
 
 }
+
 /* calculates payments */
 double calculate_payment(double principal, double annual_interest, double nop){
     double payment;
