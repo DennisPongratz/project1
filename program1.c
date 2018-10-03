@@ -10,14 +10,13 @@
 
 // declare functions
 
-void getData(double *principal, double *annual_interest, double *nop);
+void getData(double *principal, double *annual_interest, int *nop);
 double calculate_payment(double, double, double);
 double relative_interest(double, double);
 
 int main(int argc, char** argv) {
-    int i = 0;
-    double payments, relativeInterest;
-    double principal, annual_interest, nop, payment, principalPer;
+    int i, nop;
+    double principal, annual_interest, payment, principalPer, relativeInterest;
 
     // get data
     getData(&principal, &annual_interest, &nop);
@@ -28,25 +27,30 @@ int main(int argc, char** argv) {
     printf("%lf\n", payment);
     
     // give the data back
-    printf("Payment        ");
-    printf("Interest       ");
-    printf("Principal      ");
-    printf("Principal Balance\n");
-    for (i; i < nop; i++){
-        printf("%d", i + 1);
-        printf("           ");
-        printf("%.2lf\n", relativeInterest);
-
+    printf("Payment:       ");
+    printf("Interest:      ");
+    printf("Principal:     ");
+    printf("Principal Balance:\n");
+    for (i=0; i < nop; i++) {
+        
         relativeInterest = relative_interest(principal, annual_interest);
         principalPer = payment - relativeInterest;
         balance = balance - principalPer;
+
+        printf("%d", i + 1);
+        printf("              ");
+        printf("%.2lf", relativeInterest);
+        printf("         ");
+        printf("%.2lf", principalPer);
+        printf("          ");
+        printf("%.2lf\n", balance);
     }
    
     return(0);
 }
 
 // get Data function
-void getData(double *principal, double *annual_interest, double *nop) {
+void getData(double *principal, double *annual_interest, int *nop) {
     
     printf("please type in the initial principal: ");
     scanf("%lf", principal);
@@ -55,7 +59,7 @@ void getData(double *principal, double *annual_interest, double *nop) {
     scanf("%lf", annual_interest);
 
     printf("please type in the number of payments: ");
-    scanf("%lf", nop);
+    scanf("%d", nop);
 
 }
 
