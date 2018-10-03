@@ -15,9 +15,8 @@ double calculate_payment(double, double, double);
 double relative_interest(double, double);
 
 int main(int argc, char** argv) {
-    int i = 0, nop;
-    double payments, relativeInterest;
-    double principal, annual_interest, payment, principalPer;
+    int i, nop;
+    double principal, annual_interest, payment, principalPer, relativeInterest;
 
     // get data
     getData(&principal, &annual_interest, &nop);
@@ -32,7 +31,7 @@ int main(int argc, char** argv) {
     printf("Interest:      ");
     printf("Principal:     ");
     printf("Principal Balance:\n");
-    for (i; i < nop; i++) {
+    for (i=0; i < nop; i++) {
         
         relativeInterest = relative_interest(principal, annual_interest);
         principalPer = payment - relativeInterest;
