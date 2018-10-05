@@ -24,16 +24,24 @@ int main(int argc, char** argv) {
 
     // do the calculation
     payment = calculate_payment(principal, annual_interest, nop);
-    printf("%lf\n", payment);
+    //printf("%lf\n", payment);
     
     // give the data back
+
+    printf("\n");
+
+    printf("Principal      %.2lf      Payment         $%.2lf\n", principal, payment);
+    printf("Annual interest%.2lf%%         Term           %d months\n\n", annual_interest, nop);
     printf("Payment:       ");
     printf("Interest:      ");
     printf("Principal:     ");
     printf("Principal Balance:\n");
+    printf("---------------------------------------------------------------\n");
+    
+    relativeInterest = relative_interest(principal, annual_interest); 
+
     for (i=0; i < nop; i++) {
         
-        relativeInterest = relative_interest(principal, annual_interest);
         principalPer = payment - relativeInterest;
         balance = balance - principalPer;
 
@@ -44,7 +52,12 @@ int main(int argc, char** argv) {
         printf("%.2lf", principalPer);
         printf("          ");
         printf("%.2lf\n", balance);
+
+        relativeInterest = relative_interest(balance, annual_interest); 
     }
+    
+    printf("---------------------------------------------------------------\n");
+    printf("Final payment  %.2lf\n", calculate_payment(principal, annual_interest, nop));
    
     return(0);
 }
