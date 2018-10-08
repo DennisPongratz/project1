@@ -24,27 +24,40 @@ int main(int argc, char** argv) {
 
     // do the calculation
     payment = calculate_payment(principal, annual_interest, nop);
-    printf("%lf\n", payment);
+    //printf("%lf\n", payment);
     
     // give the data back
-    printf("Payment:       ");
-    printf("Interest:      ");
-    printf("Principal:     ");
+
+    printf("\n");
+
+    printf("Principal       %.2lf      Payment         $%.2lf\n", principal, payment);
+    printf("Annual interest %.2lf%%        Term            %d months\n\n", annual_interest*100, nop);
+    printf("Payment:        ");
+    printf("Interest:     ");
+    printf("Principal:      ");
     printf("Principal Balance:\n");
+    printf("---------------------------------------------------------------\n");
+    
+    relativeInterest = relative_interest(principal, annual_interest); 
+
     for (i=0; i < nop; i++) {
         
-        relativeInterest = relative_interest(principal, annual_interest);
         principalPer = payment - relativeInterest;
         balance = balance - principalPer;
 
         printf("%d", i + 1);
-        printf("              ");
+        printf("               ");
         printf("%.2lf", relativeInterest);
         printf("         ");
         printf("%.2lf", principalPer);
         printf("          ");
         printf("%.2lf\n", balance);
+
+        relativeInterest = relative_interest(balance, annual_interest); 
     }
+    
+    printf("---------------------------------------------------------------\n");
+    printf("Final payment  %.2lf\n", calculate_payment(principal, annual_interest, nop));
    
     return(0);
 }
@@ -52,11 +65,12 @@ int main(int argc, char** argv) {
 // get Data function
 void getData(double *principal, double *annual_interest, int *nop) {
     
-    printf("please type in the initial principal: ");
+    printf("please type in the initial principal [$]: ");
     scanf("%lf", principal);
 
-    printf("please type in the annual interest: ");
+    printf("please type in the annual interest [%%]: ");
     scanf("%lf", annual_interest);
+    *annual_interest = *annual_interest / 100;
 
     printf("please type in the number of payments: ");
     scanf("%d", nop);
