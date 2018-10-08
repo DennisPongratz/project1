@@ -30,11 +30,11 @@ int main(int argc, char** argv) {
 
     printf("\n");
 
-    printf("Principal      %.2lf      Payment         $%.2lf\n", principal, payment);
-    printf("Annual interest%.2lf%%         Term           %d months\n\n", annual_interest, nop);
-    printf("Payment:       ");
-    printf("Interest:      ");
-    printf("Principal:     ");
+    printf("Principal       %.2lf      Payment         $%.2lf\n", principal, payment);
+    printf("Annual interest %.2lf%%        Term            %d months\n\n", annual_interest*100, nop);
+    printf("Payment:        ");
+    printf("Interest:     ");
+    printf("Principal:      ");
     printf("Principal Balance:\n");
     printf("---------------------------------------------------------------\n");
     
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
         balance = balance - principalPer;
 
         printf("%d", i + 1);
-        printf("              ");
+        printf("               ");
         printf("%.2lf", relativeInterest);
         printf("         ");
         printf("%.2lf", principalPer);
@@ -65,11 +65,12 @@ int main(int argc, char** argv) {
 // get Data function
 void getData(double *principal, double *annual_interest, int *nop) {
     
-    printf("please type in the initial principal: ");
+    printf("please type in the initial principal [$]: ");
     scanf("%lf", principal);
 
-    printf("please type in the annual interest: ");
+    printf("please type in the annual interest [%%]: ");
     scanf("%lf", annual_interest);
+    *annual_interest = *annual_interest / 100;
 
     printf("please type in the number of payments: ");
     scanf("%d", nop);
