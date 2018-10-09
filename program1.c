@@ -11,22 +11,25 @@
 // declare functions
 
 void getData(double *principal, double *annual_interest, int *nop);
-double calculate_payment(double, double, double);
-double relative_interest(double, double);
+double calculate_payment(double principal, double annual_interest, double nop);
+double relative_interest(double principal, double annual_interest);
+
+// main function
 
 int main(int argc, char** argv) {
+
+    // declare variables
     int i, nop;
-    double principal, annual_interest, payment, principalPer, relativeInterest;
+    double principal, annual_interest, payment, principalPer, relativeInterest, balance;
 
     // get data
     getData(&principal, &annual_interest, &nop);
-    double balance = principal;
+    balance = principal;
 
     // do the calculation
     payment = calculate_payment(principal, annual_interest, nop);
     
     // give the data back with formated output
-
     printf("\n");
 
     printf("Principal");
@@ -51,8 +54,10 @@ int main(int argc, char** argv) {
     printf("%61s\n", "Balance");
     printf("---------------------------------------------------------------\n");
     
+    // calculate relative interest
     relativeInterest = relative_interest(principal, annual_interest); 
-
+    
+    // for loop for ervery payment
     for (i=0; i < nop; i++) {
         
         principalPer = payment - relativeInterest;
@@ -68,7 +73,8 @@ int main(int argc, char** argv) {
     
     printf("Final payment $%.2lf\n", calculate_payment(principal, annual_interest, nop));
     printf("---------------------------------------------------------------\n");
-   
+    
+    // exit program without errors
     return(0);
 }
 
@@ -86,6 +92,7 @@ void getData(double *principal, double *annual_interest, int *nop) {
     scanf("%d", nop);
 
 }
+
 
 /* calculates absolute amount of interest paid */
 double relative_interest(double principal, double annual_interest){
