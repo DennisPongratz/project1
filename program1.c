@@ -24,18 +24,31 @@ int main(int argc, char** argv) {
 
     // do the calculation
     payment = calculate_payment(principal, annual_interest, nop);
-    //printf("%lf\n", payment);
     
-    // give the data back
+    // give the data back with formated output
 
     printf("\n");
 
-    printf("Principal       %.2lf      Payment         $%.2lf\n", principal, payment);
-    printf("Annual interest %.2lf%%        Term            %d months\n\n", annual_interest*100, nop);
-    printf("Payment:        ");
-    printf("Interest:     ");
-    printf("Principal:      ");
-    printf("Principal Balance:\n");
+    printf("Principal");
+    printf("%9s", "$");
+    printf("%10.2lf", principal);
+    printf("%15s", "Payment");
+    printf("%9s", "$");
+    printf("%9.2lf\n", payment);
+
+    printf("Annual interest");
+    printf("%12.1lf%%", annual_interest*100);
+    printf("%15s", "Term");
+    printf("%9d", nop);
+    printf("%9s\n", "months");
+
+    printf("\n");
+  
+    printf("%7s", "Payment");
+    printf("%21s", "Interest");
+    printf("%15s", "Principal");
+    printf("%18s\n", "Principal");
+    printf("%61s\n", "Balance");
     printf("---------------------------------------------------------------\n");
     
     relativeInterest = relative_interest(principal, annual_interest); 
@@ -45,19 +58,16 @@ int main(int argc, char** argv) {
         principalPer = payment - relativeInterest;
         balance = balance - principalPer;
 
-        printf("%d", i + 1);
-        printf("               ");
-        printf("%.2lf", relativeInterest);
-        printf("         ");
-        printf("%.2lf", principalPer);
-        printf("          ");
-        printf("%.2lf\n", balance);
+        printf("%3d", i + 1);
+        printf("%25.2lf", relativeInterest);
+        printf("%15.2lf", principalPer);
+        printf("%18.2lf\n", balance);
 
         relativeInterest = relative_interest(balance, annual_interest); 
     }
     
+    printf("Final payment $%.2lf\n", calculate_payment(principal, annual_interest, nop));
     printf("---------------------------------------------------------------\n");
-    printf("Final payment  %.2lf\n", calculate_payment(principal, annual_interest, nop));
    
     return(0);
 }
