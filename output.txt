@@ -1,14 +1,15 @@
 please type in the initial principal [$]: please type in the annual interest [%]: please type in the number of payments: 
-Principal       1000000.00      Payment         $167640.24
-Annual interest 2.00%        Term            6 months
+Principal        $   1000.00        Payment        $   171.07
+Annual interest         9.0%           Term        6   months
 
-Payment:        Interest:    Principal:      Principal Balance:
+Payment             Interest      Principal         Principal
+                                                      Balance
 ---------------------------------------------------------------
-1               1666.67         165973.57          834026.43
-2               1390.04         166250.19          667776.23
-3               1112.96         166527.28          501248.96
-4               835.41         166804.82          334444.13
-5               557.41         167082.83          167361.30
-6               278.94         167361.30          0.00
+  1                     7.50         163.57            836.43
+  2                     6.27         164.80            671.64
+  3                     5.04         166.03            505.60
+  4                     3.79         167.28            338.33
+  5                     2.54         168.53            169.80
+  6                     1.27         169.80              0.00
+Final payment $171.07
 ---------------------------------------------------------------
-Final payment  167640.24
