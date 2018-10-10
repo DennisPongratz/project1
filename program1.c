@@ -3,6 +3,8 @@
  * 21/09/2018
  *
  * purpose:
+ * Progeram takes in principal amount, annual interest, and number of payments.
+ * It calculates the monthly payment and builds an amortization schedule.
  */
 
 #include <stdio.h>
