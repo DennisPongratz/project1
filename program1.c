@@ -15,6 +15,7 @@
 void getData(double *principal, double *annual_interest, int *nop);
 double calculate_payment(double principal, double annual_interest, double nop);
 double relative_interest(double principal, double annual_interest);
+double roundTwoDec(double number);
 
 // main function
 
@@ -73,7 +74,7 @@ int main(int argc, char** argv) {
         relativeInterest = relative_interest(balance, annual_interest); 
     }
     
-    printf("Final payment $%.2lf\n", calculate_payment(principal, annual_interest, nop));
+    printf("Final payment $%.2lf\n", roundTwoDec(calculate_payment(principal, annual_interest, nop)));
     printf("---------------------------------------------------------------\n");
     
     // exit program without errors
@@ -114,4 +115,9 @@ double calculate_payment(double principal, double annual_interest, double nop){
 
 }
 
+// rounding function
+double roundTwoDec(double number) {
+    number = roundf(number *100)/100;
+    return number;
+}
 
