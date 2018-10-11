@@ -60,7 +60,7 @@ int main(int argc, char** argv) {
     // calculate relative interest
     relativeInterest = relative_interest(principal, annual_interest); 
     
-    // for loop for ervery payment
+    // for-loop for ervery payment
     for (i=0; i < nop; i++) {
         
         principalPer = payment - relativeInterest;
@@ -71,12 +71,12 @@ int main(int argc, char** argv) {
         printf("%15.2lf", principalPer);
         printf("%18.2lf\n", balance);
 
-        relativeInterest = relative_interest(balance, annual_interest); 
+        relativeInterest = roundTwoDec(relative_interest(balance, annual_interest)); 
     }
     
     printf("Final payment $%.2lf\n", roundTwoDec(calculate_payment(principal, annual_interest, nop)));
     printf("---------------------------------------------------------------\n");
-    
+
     // exit program without errors
     return(0);
 }
